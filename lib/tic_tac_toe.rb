@@ -188,21 +188,16 @@ end
 # end
 
 def play(board)
-  input = gets
-  if over?(board)
-    puts "over"
-    false
-  elsif over?(board)
-    puts "over"
-    false
-  elsif over?(board)
-    puts "over"
-    true
-  else turn(board)
-    true
+  until over?(board) == true
+    turn(board)
+  end
+
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cats Game!"
   end
 end
-
 
 
 
